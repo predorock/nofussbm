@@ -45,13 +45,12 @@ def query_from_dict( email, dct ):
 
 
 # Utility functions
-
 def send_mail( frm, to, subject, body ):
 	msg = MIMEText( body.encode( 'utf8' ), 'plain', 'utf8' )
 	msg[ 'Subject' ] = subject
 	msg[ 'From' ] = frm
 	msg[ 'To' ] = to
-	s = SMTP( 'smtp.sendgrid.net' )
-	s.login( Config.SENDGRID_USERNAME, Config.SENDGRID_PASSWORD )
+	s = SMTP( Config.SMTP_URL , 587)
+	s.login( Config.SMTP_USER, Config.SMTP_PASSWORD )
 	s.sendmail( frm, [ to ], msg.as_string() )
 	s.quit()

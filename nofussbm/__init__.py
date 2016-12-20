@@ -26,10 +26,11 @@ from pymongo.errors import OperationFailure
 # Configure from the environment, global (immutable) variables (before submodules import)
 
 class Config( object ):
-	SECRET_KEY = environ[ 'SECRET_KEY' ]
-	SENDGRID_USERNAME = environ[ 'SENDGRID_USERNAME' ]
-	SENDGRID_PASSWORD = environ[ 'SENDGRID_PASSWORD' ]
-	MONGO_URI = environ[ 'MONGOLAB_URI' ]
+	SECRET_KEY 		= environ[ 'SECRET_KEY' ]
+	SMTP_URL   		= environ[ 'SMTP_URL' ]
+	SMTP_USER  		= environ[ 'SMTP_USER' ]
+	SMTP_PASSWORD 	= environ[ 'SMTP_PASSWORD' ]
+	MONGO_URI 		= environ[ 'MONGOLAB_URI' ]
 
 # Create the app and mongo helper
 app = Flask( __name__ )
