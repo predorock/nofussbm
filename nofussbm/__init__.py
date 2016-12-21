@@ -53,7 +53,7 @@ app.register_blueprint( api, url_prefix = '/api/v1' )
 # @app.before_request
 # def before_request():
 # 	g.db = DB( 'MONGOLAB_URI' )
-
+#
 # @app.teardown_request
 # def teardown_request( exception ):
 # 	del g.db
